@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0a0a0a;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.series-label {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.slide {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto 32px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── BRANDING FOOTER (all slides) ── */
+.brand-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-top: 1px solid rgba(255,61,0,0.18);
+  background: rgba(0,0,0,0.55);
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.brand-footer.light {
+  background: #f5f5f5;
+  border-top: 1px solid #e0e0e0;
+}
+.brand-footer .bfl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-footer .logo-pill {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #ff3d00;
+  letter-spacing: 0.5px;
+}
+.brand-footer .logo-pill .dot { color: #fff; }
+.brand-footer.light .logo-pill .dot { color: #0a0a0a; }
+.brand-footer .sep {
+  width: 1px; height: 14px;
+  background: #2a2a2a;
+}
+.brand-footer.light .sep { background: #ccc; }
+.brand-footer .contact-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.brand-footer .ci {
+  font-size: 10px;
+  color: #555;
+  letter-spacing: 0.3px;
+}
+.brand-footer.light .ci { color: #999; }
+.brand-footer .ci strong {
+  color: #888;
+  font-weight: 500;
+}
+.brand-footer.light .ci strong { color: #555; }
+.brand-footer .ci .val {
+  color: #ccc;
+}
+.brand-footer.light .ci .val { color: #333; }
+
+/* ===================== SLIDE 1 ===================== */
+.s1 {
+  background: #0d0d0d;
+  border: 1px solid #1a1a1a;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 44px 28px;
+  position: relative;
+}
+.s1::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff3d00, #ff6b35, #ff3d00);
+}
+.s1 .slide-num {
+  font-size: 11px; letter-spacing: 4px; color: #ff3d00;
+  text-transform: uppercase; margin-bottom: 32px;
+}
+.s1 .big-line {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 56px; line-height: 1.0; color: #fff; margin-bottom: 8px;
+}
+.s1 .big-line .accent { color: #ff3d00; }
+.s1 .big-line .dim { color: #333; }
+.s1 .sub {
+  font-size: 15px; color: #888; margin-top: 20px; line-height: 1.6; max-width: 480px;
+}
+.s1 .sub strong { color: #ccc; }
+.s1 .stat-row {
+  display: flex; gap: 24px; margin-top: 36px;
+  padding-top: 28px; border-top: 1px solid #1e1e1e;
+  margin-bottom: 20px;
+}
+.s1 .stat .num {
+  font-family: 'Syne', sans-serif; font-size: 34px; font-weight: 800; color: #ff3d00;
+}
+.s1 .stat .label { font-size: 11px; color: #555; margin-top: 4px; line-height: 1.4; }
+.slide-badge {
+  position: absolute; top: 20px; right: 20px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #ff3d00; color: #fff;
+  font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.slide-badge.dark {
+  background: #1a1a1a; color: #ff3d00; border: 1px solid #ff3d00;
+}
+
+/* ===================== SLIDE 2 ===================== */
+.s2 {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  min-height: 540px;
+  padding: 48px 44px 0;
+  position: relative;
+}
+.s2::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 0;
+}
+.s2 .slide-num {
+  font-size: 11px; letter-spacing: 4px; color: #bbb;
+  text-transform: uppercase; margin-bottom: 36px;
+}
+.s2 .headline {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 42px; line-height: 1.1; color: #0a0a0a;
+}
+.s2 .headline .red { color: #ff3d00; }
+.s2 .pain-list {
+  list-style: none; margin-top: 32px;
+  display: flex; flex-direction: column; gap: 14px;
+  margin-bottom: 24px;
+}
+.s2 .pain-list li {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 14px 18px; background: #f7f7f7;
+  border-radius: 12px; border-left: 4px solid #ff3d00;
+}
+.s2 .pain-list li .icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.s2 .pain-list li .text strong {
+  display: block; font-size: 14px; font-weight: 700;
+  color: #0a0a0a; margin-bottom: 2px;
+}
+.s2 .pain-list li .text span { font-size: 12px; color: #777; line-height: 1.4; }
+.s2 .bottom-hook {
+  margin-bottom: 0; font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 700; color: #0a0a0a;
+  padding: 16px 20px; background: #0a0a0a; color: #fff;
+  border-radius: 10px 10px 0 0; text-align: center;
+}
+.s2 .bottom-hook span { color: #ff3d00; }
+
+/* ===================== SLIDE 3 ===================== */
+.s3 { background: #0f1117; min-height: 580px; position: relative; overflow: hidden; }
+.s3 .top-bar {
+  background: #ff3d00; padding: 12px 44px;
+  font-size: 11px; letter-spacing: 4px;
+  text-transform: uppercase; color: #fff; font-weight: 700;
+}
+.s3 .content { padding: 40px 44px 0; }
+.s3 .main-stat {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 78px; line-height: 1;
+  color: #fff; display: flex; align-items: baseline; gap: 8px;
+}
+.s3 .main-stat .pct { color: #ff3d00; }
+.s3 .main-stat .small { font-size: 20px; color: #555; }
+.s3 .stat-label { font-size: 15px; color: #888; margin-top: 6px; margin-bottom: 36px; }
+.s3 .stat-label strong { color: #ccc; }
+.s3 .reality-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+.s3 .reality-card {
+  background: #161b27; border: 1px solid #1e2535;
+  border-radius: 14px; padding: 18px;
+}
+.s3 .reality-card .rc-num {
+  font-family: 'Syne', sans-serif; font-size: 30px;
+  font-weight: 800; color: #ff3d00;
+}
+.s3 .reality-card .rc-label { font-size: 11px; color: #666; margin-top: 6px; line-height: 1.4; }
+.s3 .reality-card .rc-label strong { color: #aaa; }
+.s3 .bottom-quote {
+  margin-bottom: 0; padding: 18px 24px;
+  border-left: 3px solid #ff3d00;
+  background: #161b27; border-radius: 0 10px 0 0;
+}
+.s3 .bottom-quote p { font-size: 13px; color: #aaa; line-height: 1.6; font-style: italic; }
+.s3 .bottom-quote p strong { color: #fff; font-style: normal; }
+
+/* ===================== SLIDE 4 ===================== */
+.s4 { background: #fff; min-height: 560px; padding: 48px 44px 0; position: relative; }
+.s4 .slide-num { font-size: 11px; letter-spacing: 4px; color: #bbb; text-transform: uppercase; margin-bottom: 24px; }
+.s4 .headline {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 36px; line-height: 1.1; color: #0a0a0a; margin-bottom: 30px;
+}
+.s4 .headline .strike {
+  text-decoration: line-through; text-decoration-color: #ff3d00;
+  text-decoration-thickness: 4px; color: #bbb;
+}
+.s4 .comparison {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border: 2px solid #0a0a0a; border-radius: 16px; overflow: hidden;
+  margin-bottom: 20px;
+}
+.s4 .col-head {
+  padding: 14px 18px; font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+}
+.s4 .col-bad { background: #f5f5f5; color: #bbb; }
+.s4 .col-good { background: #0a0a0a; color: #fff; }
+.s4 .col-good .highlight { color: #ff3d00; }
+.s4 .col-item {
+  padding: 11px 18px; font-size: 12px; border-bottom: 1px solid #efefef;
+  display: flex; align-items: center; gap: 10px; color: #555;
+}
+.s4 .col-item.last { border-bottom: none; }
+.s4 .col-item-dark {
+  padding: 11px 18px; font-size: 12px; border-bottom: 1px solid #1a1a1a;
+  display: flex; align-items: center; gap: 10px; color: #aaa;
+  background: #0a0a0a;
+}
+.s4 .col-item-dark strong { color: #fff; }
+.s4 .col-item-dark.last { border-bottom: none; }
+.s4 .dot-bad { width: 6px; height: 6px; background: #ddd; border-radius: 50%; flex-shrink: 0; }
+.s4 .dot-good { width: 6px; height: 6px; background: #ff3d00; border-radius: 50%; flex-shrink: 0; }
+.s4 .cta-bar {
+  background: #ff3d00; color: #fff; border-radius: 10px 10px 0 0;
+  padding: 16px 22px; font-family: 'Syne', sans-serif;
+  font-size: 14px; font-weight: 700; text-align: center;
+}
+
+/* ===================== SLIDE 5 ===================== */
+.s5 {
+  background: #0a0a0a; min-height: 540px; padding: 48px 44px 0;
+  border: 1px solid #1a1a1a; position: relative; overflow: hidden;
+}
+.s5::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 80% 20%, rgba(255,61,0,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.s5 .slide-num { font-size: 11px; letter-spacing: 4px; color: #ff3d00; text-transform: uppercase; margin-bottom: 28px; }
+.s5 .headline { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 46px; line-height: 1.0; margin-bottom: 12px; }
+.s5 .headline .big { font-size: 68px; color: #ff3d00; display: block; line-height: 1; }
+.s5 .sub { font-size: 13px; color: #666; margin-bottom: 32px; max-width: 420px; line-height: 1.5; }
+.s5 .sub strong { color: #aaa; }
+.s5 .month-bar { display: flex; gap: 7px; margin-bottom: 8px; }
+.s5 .month { flex: 1; height: 7px; border-radius: 4px; background: #1a1a1a; }
+.s5 .month.active { background: #ff3d00; }
+.s5 .month-labels { display: flex; gap: 7px; margin-bottom: 28px; }
+.s5 .month-labels span { flex: 1; font-size: 9px; color: #444; text-align: center; letter-spacing: 1px; text-transform: uppercase; }
+.s5 .month-labels span.active-l { color: #ff3d00; }
+.s5 .options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 0; padding-bottom: 20px; }
+.s5 .opt { background: #111; border: 1px solid #1a1a1a; border-radius: 14px; padding: 18px; }
+.s5 .opt .emoji { font-size: 22px; margin-bottom: 8px; }
+.s5 .opt .opt-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 5px; }
+.s5 .opt.bad .opt-title { color: #444; }
+.s5 .opt.good .opt-title { color: #fff; }
+.s5 .opt .opt-desc { font-size: 11px; color: #555; line-height: 1.4; }
+.s5 .opt.good { border-color: #ff3d00; }
+.s5 .opt.good .opt-desc { color: #888; }
+
+/* ===================== SLIDE 6 ===================== */
+.s6 { background: #fff; min-height: 600px; padding: 48px 44px 0; }
+.s6 .slide-num { font-size: 11px; letter-spacing: 4px; color: #bbb; text-transform: uppercase; margin-bottom: 24px; }
+.s6 .headline { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 32px; line-height: 1.1; color: #0a0a0a; margin-bottom: 8px; }
+.s6 .headline .tag {
+  display: inline-block; background: #ff3d00; color: #fff;
+  font-size: 11px; padding: 3px 9px; border-radius: 4px;
+  vertical-align: middle; margin-left: 8px;
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.s6 .sub { font-size: 13px; color: #888; margin-bottom: 28px; line-height: 1.5; }
+.s6 .sub strong { color: #0a0a0a; }
+.s6 .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.s6 .skill-card { border: 1.5px solid #efefef; border-radius: 14px; padding: 16px 18px; }
+.s6 .skill-card .sk-icon { font-size: 24px; margin-bottom: 8px; }
+.s6 .skill-card .sk-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: #0a0a0a; margin-bottom: 3px; }
+.s6 .skill-card .sk-desc { font-size: 11px; color: #999; line-height: 1.4; }
+.s6 .skill-card .sk-badge {
+  display: inline-block; margin-top: 7px; font-size: 10px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase; color: #ff3d00;
+  background: #fff5f2; padding: 3px 8px; border-radius: 4px;
+}
+.s6 .bottom-bar {
+  background: #0a0a0a; border-radius: 10px 10px 0 0;
+  padding: 16px 22px; display: flex; align-items: center; justify-content: space-between;
+}
+.s6 .bottom-bar .bb-text { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: #fff; }
+.s6 .bottom-bar .bb-text span { color: #ff3d00; }
+.s6 .bottom-bar .bb-sub { font-size: 11px; color: #555; margin-top: 3px; }
+
+/* ===================== SLIDE 7 — CTA FINAL ===================== */
+.s7 {
+  background: #0a0a0a; min-height: 620px; padding: 44px 44px 0;
+  border: 1px solid #1a1a1a; position: relative; overflow: hidden;
+}
+.s7::before {
+  content: ''; position: absolute; bottom: -60px; right: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,61,0,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.s7 .slide-num { font-size: 11px; letter-spacing: 4px; color: #ff3d00; text-transform: uppercase; margin-bottom: 28px; }
+.s7 .headline { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.05; margin-bottom: 32px; }
+.s7 .headline span { color: #ff3d00; }
+.s7 .journey { display: flex; flex-direction: column; gap: 0; margin-bottom: 24px; }
+.s7 .journey-step { display: flex; align-items: stretch; gap: 18px; }
+.s7 .step-line { display: flex; flex-direction: column; align-items: center; width: 22px; flex-shrink: 0; }
+.s7 .step-dot { width: 11px; height: 11px; border-radius: 50%; background: #ff3d00; flex-shrink: 0; margin-top: 15px; }
+.s7 .step-connector { flex: 1; width: 2px; background: #1a1a1a; margin: 4px 0; min-height: 16px; }
+.s7 .step-content {
+  flex: 1; padding: 12px 18px; background: #111;
+  border: 1px solid #1a1a1a; border-radius: 12px; margin-bottom: 10px;
+}
+.s7 .step-content .sc-before { font-size: 10px; letter-spacing: 2px; color: #444; text-transform: uppercase; margin-bottom: 3px; }
+.s7 .step-content .sc-title { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #fff; }
+.s7 .step-content .sc-title .dim { color: #444; }
+.s7 .step-content .sc-sub { font-size: 11px; color: #555; margin-top: 3px; }
+
+/* DISCOUNT BADGE */
+.discount-badge {
+  position: relative;
+  background: linear-gradient(135deg, #ff3d00, #ff6b35);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.discount-badge::before {
+  content: '';
+  position: absolute; top: -20px; right: -20px;
+  width: 100px; height: 100px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+}
+.discount-badge .db-left .db-pct {
+  font-family: 'Syne', sans-serif;
+  font-size: 52px; font-weight: 800; color: #fff; line-height: 1;
+}
+.discount-badge .db-left .db-off {
+  font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.75);
+  letter-spacing: 2px; text-transform: uppercase;
+}
+.discount-badge .db-right { text-align: right; }
+.discount-badge .db-right .db-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800; color: #fff; line-height: 1.2;
+}
+.discount-badge .db-right .db-sub {
+  font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 6px; line-height: 1.4;
+}
+.discount-badge .db-right .db-urgency {
+  display: inline-block; margin-top: 8px;
+  background: rgba(0,0,0,0.2); color: #fff;
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 20px;
+}
+
+/* FORM LINK CTA */
+.form-cta {
+  background: #fff; border-radius: 14px; padding: 20px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 0;
+}
+.form-cta .fc-left .fc-label {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: #bbb; margin-bottom: 4px;
+}
+.form-cta .fc-left .fc-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px; font-weight: 800; color: #0a0a0a; line-height: 1.2;
+}
+.form-cta .fc-left .fc-title span { color: #ff3d00; }
+.form-cta .fc-left .fc-url {
+  font-size: 12px; color: #888; margin-top: 5px; font-weight: 500;
+}
+.form-cta .fc-right {
+  flex-shrink: 0; background: #ff3d00; color: #fff;
+  font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 800;
+  padding: 12px 20px; border-radius: 10px;
+  text-decoration: none; letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+
+<p class="series-label">CreonixQuill · Pakistan Digital Skills Series · 7 Slides</p>
+
+<!-- ===================== SLIDE 1 ===================== -->
+<div class="slide s1">
+  <div class="slide-badge">1</div>
+  <div class="slide-num">Reality Check · Pakistan 2025</div>
+  <div class="big-line">Degree done.</div>
+  <div class="big-line"><span class="accent">Job?</span></div>
+  <div class="big-line"><span class="dim">Nowhere.</span></div>
+  <p class="sub">In <strong>Pakistan</strong>, millions graduate every year. Most cannot find work. School gave you theory. The market wants <strong>real skills.</strong></p>
+  <div class="stat-row">
+    <div class="stat">
+      <div class="num">31%</div>
+      <div class="label">Youth unemployment in Pakistan</div>
+    </div>
+    <div class="stat">
+      <div class="num">64%</div>
+      <div class="label">Graduates say degree did not help get a job</div>
+    </div>
+    <div class="stat">
+      <div class="num">0</div>
+      <div class="label">Practical digital skills in matric curriculum</div>
+    </div>
+  </div>
+  <div class="brand-footer">
+    <div class="bfl">
+      <span class="logo-pill">CreonixQuill<span class="dot">.</span></span>
+      <div class="sep"></div>
+      <div class="contact-info">
+        <span class="ci">📞 <span class="val">+92-325-0849016</span></span>
+        <span class="ci">✉ <span class="val">creonixquill@gmail.com</span></span>
+      </div>
+    </div>
+    <div class="contact-info">
+      <span class="ci">📘 <span class="val">CreonixQuill</span></span>
+      <span class="ci">📸 <span class="val">CreonixQuill_</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE 2 ===================== -->
+<div class="slide s2">
+  <div class="slide-badge dark">2</div>
+  <div class="slide-num">Pain Points · What You Feel Every Day</div>
+  <div class="headline">You are not <span class="red">lazy.</span><br>The system is <span class="red">broken.</span></div>
+  <ul class="pain-list">
+    <li>
+      <div class="icon">📚</div>
+      <div class="text">
+        <strong>School teaches. The market ignores it.</strong>
+        <span>Rote learning, zero real-world value — no skill in Pakistan's job market came from a textbook</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon">😔</div>
+      <div class="text">
+        <strong>You feel stuck and left behind</strong>
+        <span>Watching others earn online while you are still waiting for results and a chance</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon">💸</div>
+      <div class="text">
+        <strong>Family pressure. No income. No plan.</strong>
+        <span>In <strong>Pakistan</strong>, financial pressure on young people starts earlier than anywhere else</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon">🎓</div>
+      <div class="text">
+        <strong>Even a university graduate cannot get a job</strong>
+        <span>A full degree in Pakistan and still unemployed — so what is the actual plan forward?</span>
+      </div>
+    </li>
+  </ul>
+  <div class="bottom-hook">This is <span>Pakistan's</span> reality. And it is time to break out of it.</div>
+  <div class="brand-footer light">
+    <div class="bfl">
+      <span class="logo-pill" style="color:#ff3d00;">CreonixQuill<span class="dot" style="color:#0a0a0a;">.</span></span>
+      <div class="sep"></div>
+      <div class="contact-info">
+        <span class="ci">📞 <span class="val">+92-325-0849016</span></span>
+        <span class="ci">✉ <span class="val">creonixquill@gmail.com</span></span>
+      </div>
+    </div>
+    <div class="contact-info">
+      <span class="ci">📘 <span class="val">CreonixQuill</span></span>
+      <span class="ci">📸 <span class="val">CreonixQuill_</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE 3 ===================== -->
+<div class="slide s3">
+  <div class="slide-badge">3</div>
+  <div class="top-bar">CreonixQuill · Pakistan's Unemployment Crisis — The Numbers</div>
+  <div class="content">
+    <div class="main-stat">
+      <span class="pct">31%</span>
+      <span class="small">youth unemployed</span>
+    </div>
+    <div class="stat-label">in <strong>Pakistan</strong> — and rising every single year</div>
+    <div class="reality-grid">
+      <div class="reality-card">
+        <div class="rc-num">4.5M</div>
+        <div class="rc-label"><strong>New graduates</strong> enter Pakistan's market each year with no jobs waiting</div>
+      </div>
+      <div class="reality-card">
+        <div class="rc-num">75%</div>
+        <div class="rc-label"><strong>Jobs now require digital skills</strong> — skills no Pakistani school currently teaches</div>
+      </div>
+      <div class="reality-card">
+        <div class="rc-num">Rs.0</div>
+        <div class="rc-label"><strong>Average matric grad earns online</strong> — because no one ever taught them how</div>
+      </div>
+      <div class="reality-card">
+        <div class="rc-num">$2.6B</div>
+        <div class="rc-label"><strong>Pakistan's freelance market potential</strong> — almost entirely untapped by youth</div>
+      </div>
+    </div>
+    <div class="bottom-quote">
+      <p>The crisis is not talent. <strong>Pakistan has extraordinary young minds.</strong> The crisis is that the system never taught them what the world actually pays for.</p>
+    </div>
+  </div>
+  <div class="brand-footer">
+    <div class="bfl">
+      <span class="logo-pill">CreonixQuill<span class="dot">.</span></span>
+      <div class="sep"></div>
+      <div class="contact-info">
+        <span class="ci">📞 <span class="val">+92-325-0849016</span></span>
+        <span class="ci">✉ <span class="val">creonixquill@gmail.com</span></span>
+      </div>
+    </div>
+    <div class="contact-info">
+      <span class="ci">📘 <span class="val">CreonixQuill</span></span>
+      <span class="ci">📸 <span class="val">CreonixQuill_</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE 4 ===================== -->
+<div class="slide s4">
+  <div class="slide-badge dark">4</div>
+  <div class="slide-num">The System vs. Reality</div>
+  <div class="headline">What <span class="strike">school</span> taught you<br>vs. what actually <span style="color:#ff3d00">earns.</span></div>
+  <div class="comparison">
+    <div>
+      <div class="col-head col-bad">School / College</div>
+      <div class="col-item"><div class="dot-bad"></div>Memorise chapters</div>
+      <div class="col-item"><div class="dot-bad"></div>Pass exams, forget everything</div>
+      <div class="col-item"><div class="dot-bad"></div>Wait 14 years for a degree</div>
+      <div class="col-item"><div class="dot-bad"></div>Apply for jobs, get rejected</div>
+      <div class="col-item last"><div class="dot-bad"></div>Still dependent on parents</div>
+    </div>
+    <div style="background:#0a0a0a;">
+      <div class="col-head col-good">CreonixQuill <span class="highlight">→</span></div>
+      <div class="col-item-dark"><div class="dot-good"></div><strong>Build real projects</strong></div>
+      <div class="col-item-dark"><div class="dot-good"></div><strong>Get market-ready skills</strong></div>
+      <div class="col-item-dark"><div class="dot-good"></div><strong>Start earning in months</strong></div>
+      <div class="col-item-dark"><div class="dot-good"></div><strong>Create your own income</strong></div>
+      <div class="col-item-dark last"><div class="dot-good"></div><strong>Be financially independent</strong></div>
+    </div>
+  </div>
+  <div class="cta-bar">CS Degree-level skills — introduced at Matric level. First time in Pakistan.</div>
+  <div class="brand-footer light">
+    <div class="bfl">
+      <span class="logo-pill" style="color:#ff3d00;">CreonixQuill<span class="dot" style="color:#0a0a0a;">.</span></span>
+      <div class="sep"></div>
+      <div class="contact-info">
+        <span class="ci">📞 <span class="val">+92-325-0849016</span></span>
+        <span class="ci">✉ <span class="val">creonixquill@gmail.com</span></span>
+      </div>
+    </div>
+    <div class="contact-info">
+      <span class="ci">📘 <span class="val">CreonixQuill</span></span>
+      <span class="ci">📸 <span class="val">CreonixQuill_</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE 5 ===================== -->
+<div class="slide s5">
+  <div class="slide-badge">5</div>
+  <div class="slide-num">The Window · Right Now</div>
+  <div class="headline">
+    <span class="big">4–5</span>
+    Months free.<br>One decision.
+  </div>
+  <p class="sub">After matric results, most students <strong>waste their free months.</strong> This is the rarest window in your life — unstructured time before college pressure begins.</p>
+  <div class="month-bar">
+    <div class="month active"></div><div class="month active"></div>
+    <div class="month active"></div><div class="month active"></div>
+    <div class="month active"></div><div class="month"></div>
+    <div class="month"></div><div class="month"></div>
+    <div class="month"></div><div class="month"></div>
+    <div class="month"></div><div class="month"></div>
+  </div>
+  <div class="month-labels">
+    <span class="active-l">May</span><span class="active-l">Jun</span>
+    <span class="active-l">Jul</span><span class="active-l">Aug</span>
+    <span class="active-l">Sep</span><span>Oct</span>
+    <span>Nov</span><span>Dec</span>
+    <span>Jan</span><span>Feb</span>
+    <span>Mar</span><span>Apr</span>
+  </div>
+  <div class="options">
+    <div class="opt bad">
+      <div class="emoji">📱</div>
+      <div class="opt-title">Scroll. Sleep. Repeat.</div>
+      <div class="opt-desc">TikTok, Instagram — months gone, nothing to show for it</div>
+    </div>
+    <div class="opt good">
+      <div class="emoji">💻</div>
+      <div class="opt-title">Learn. Build. Earn.</div>
+      <div class="opt-desc">Digital skills that pay — before college even starts. Real income. Real portfolio.</div>
+    </div>
+  </div>
+  <div class="brand-footer">
+    <div class="bfl">
+      <span class="logo-pill">CreonixQuill<span class="dot">.</span></span>
+      <div class="sep"></div>
+      <div class="contact-info">
+        <span class="ci">📞 <span class="val">+92-325-0849016</span></span>
+        <span class="ci">✉ <span class="val">creonixquill@gmail.com</span></span>
+      </div>
+    </div>
+    <div class="contact-info">
+      <span class="ci">📘 <span class="val">CreonixQuill</span></span>
+      <span class="ci">📸 <span class="val">CreonixQuill_</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE 6 ===================== -->
+<div class="slide s6">
+  <div class="slide-badge dark">6</div>
+  <div class="slide-num">What You Will Learn · CreonixQuill</div>
+  <div class="headline">CS Degree Skills <span class="tag">Matric Level</span></div>
+  <p class="sub">These are skills taught in <strong>4-year computer science degrees</strong> at universities. CreonixQuill is bringing them to you right now — at matric level. First time in <strong>Pakistan.</strong></p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="sk-icon">🎨</div>
+      <div class="sk-title">Digital Design & Branding</div>
+      <div class="sk-desc">Canva, brand identity, social media design — freelance from day one</div>
+      <div class="sk-badge">Earns Rs.30k–150k/mo</div>
+    </div>
+    <div class="skill-card">
+      <div class="sk-icon">📱</div>
+      <div class="sk-title">Social Media Marketing</div>
+      <div class="sk-desc">Run campaigns, manage brands — what every business in Pakistan needs right now</div>
+      <div class="sk-badge">Need of the hour</div>
+    </div>
+    <div class="skill-card">
+      <div class="sk-icon">💻</div>
+      <div class="sk-title">Web & App Fundamentals</div>
+      <div class="sk-desc">Build real things. Think like a developer. University-level introduction.</div>
+      <div class="sk-badge">Degree-level skill</div>
+    </div>
+    <div class="skill-card">
+      <div class="sk-icon">🤖</div>
+      <div class="sk-title">AI Tools & Automation</div>
+      <div class="sk-desc">ChatGPT, Midjourney, automation — the future of every industry in Pakistan</div>
+      <div class="sk-badge">Future-proof</div>
+    </div>
+    <div class="skill-card">
+      <div class="sk-icon">🌐</div>
+      <div class="sk-title">Freelancing & Fiverr</div>
+      <div class="sk-desc">Set up, sell, and earn on global platforms — from Pakistan, in dollars</div>
+      <div class="sk-badge">Earn in dollars</div>
+    </div>
+    <div class="skill-card">
+      <div class="sk-icon">📊</div>
+      <div class="sk-title">Data & Business Thinking</div>
+      <div class="sk-desc">Spreadsheets, analytics, problem solving — think like a CEO, not a student</div>
+      <div class="sk-badge">Real-world skills</div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div>
+      <div class="bb-text">Not a course. <span>A career head-start.</span></div>
+      <div class="bb-sub">For every student in Pakistan who refuses to wait any longer.</div>
+    </div>
+    <div style="font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:#ff3d00;">→</div>
+  </div>
+  <div class="brand-footer light">
+    <div class="bfl">
+      <span class="logo-pill" style="color:#ff3d00;">CreonixQuill<span class="dot" style="color:#0a0a0a;">.</span></span>
+      <div class="sep"></div>
+      <div class="contact-info">
+        <span class="ci">📞 <span class="val">+92-325-0849016</span></span>
+        <span class="ci">✉ <span class="val">creonixquill@gmail.com</span></span>
+      </div>
+    </div>
+    <div class="contact-info">
+      <span class="ci">📘 <span class="val">CreonixQuill</span></span>
+      <span class="ci">📸 <span class="val">CreonixQuill_</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE 7 — FINAL CTA ===================== -->
+<div class="slide s7">
+  <div class="slide-badge">7</div>
+  <div class="slide-num">Your Journey · Starts Today with CreonixQuill</div>
+  <div class="headline">From<br><span>stuck student</span><br>to digital professional.</div>
+
+  <div class="journey">
+    <div class="journey-step">
+      <div class="step-line"><div class="step-dot"></div><div class="step-connector"></div></div>
+      <div class="step-content">
+        <div class="sc-before">Today</div>
+        <div class="sc-title">Matric done. <span class="dim">4–5 months free.</span></div>
+        <div class="sc-sub">Most will waste it. You will not.</div>
+      </div>
+    </div>
+    <div class="journey-step">
+      <div class="step-line"><div class="step-dot"></div><div class="step-connector"></div></div>
+      <div class="step-content">
+        <div class="sc-before">Month 1–2</div>
+        <div class="sc-title">Learn real digital skills with CreonixQuill</div>
+        <div class="sc-sub">Design, marketing, web, AI — skills Pakistan's market is demanding right now</div>
+      </div>
+    </div>
+    <div class="journey-step">
+      <div class="step-line"><div class="step-dot"></div><div class="step-connector"></div></div>
+      <div class="step-content">
+        <div class="sc-before">Month 3–4</div>
+        <div class="sc-title">Build your portfolio. Land first clients.</div>
+        <div class="sc-sub">Real projects. Real money. Before college even begins.</div>
+      </div>
+    </div>
+    <div class="journey-step">
+      <div class="step-line"><div class="step-dot"></div><div class="step-connector" style="display:none"></div></div>
+      <div class="step-content">
+        <div class="sc-before">After the course</div>
+        <div class="sc-title">Already earning. <span class="dim">No degree needed.</span></div>
+        <div class="sc-sub">While others are still waiting — you are already inside the digital economy</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCOUNT BADGE -->
+  <div class="discount-badge">
+    <div class="db-left">
+      <div class="db-pct">30%</div>
+      <div class="db-off">OFF</div>
+    </div>
+    <div class="db-right">
+      <div class="db-label">Limited Time Offer<br>for Early Enrollments</div>
+      <div class="db-sub">Enroll now and save 30% on Pakistan's<br>first matric-level digital skills program</div>
+      <div class="db-urgency">Seats are limited — act now</div>
+    </div>
+  </div>
+
+  <!-- FORM CTA -->
+  <div class="form-cta">
+    <div class="fc-left">
+      <div class="fc-label">Register Now · Free Form</div>
+      <div class="fc-title">Fill the form &amp; <span>lock your 30% discount</span></div>
+      <div class="fc-url">🔗 creonixquill.tiiny.site</div>
+    </div>
+    <a href="https://creonixquill.tiiny.site" class="fc-right">Enroll Now →</a>
+  </div>
+
+  <div class="brand-footer" style="margin-top:16px;">
+    <div class="bfl">
+      <span class="logo-pill">CreonixQuill<span class="dot">.</span></span>
+      <div class="sep"></div>
+      <div class="contact-info">
+        <span class="ci">📞 <span class="val">+92-325-0849016</span></span>
+        <span class="ci">✉ <span class="val">creonixquill@gmail.com</span></span>
+      </div>
+    </div>
+    <div class="contact-info">
+      <span class="ci">📘 <span class="val">CreonixQuill</span></span>
+      <span class="ci">📸 <span class="val">CreonixQuill_</span></span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
